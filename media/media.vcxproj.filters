@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="flv">
+      <UniqueIdentifier>{e8e13a88-e153-46b4-be8b-2038490cd403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="iso">
+      <UniqueIdentifier>{b0b982d9-dba5-45f6-8034-b35994299efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="iso\box">
+      <UniqueIdentifier>{897068a0-4862-45e3-a813-b17162789928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="avc">
+      <UniqueIdentifier>{19b95a8c-0a54-432f-91f1-a95e4d8590e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="flv\flv.h">
+      <Filter>flv</Filter>
+    </ClInclude>
+    <ClInclude Include="flv\flv_parser.h">
+      <Filter>flv</Filter>
+    </ClInclude>
+    <ClInclude Include="flv\flv_to_string.h">
+      <Filter>flv</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\iso_constants.h">
+      <Filter>iso</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\iso_media_parser.h">
+      <Filter>iso</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\ftyp_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\iso_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\mdat_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\mdia_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\moov_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\mvhd_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\pdin_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\skip_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\tkhd_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\trak_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\tref_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\trgr_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\mdhd_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\minf_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\hdlr_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\nmhd_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\elng_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stbl_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stdp_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stts_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\ctts_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stsd_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\cslg_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stss_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stsh_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\sdtp_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\edts_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\elst_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\dinf_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\dref_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="avc\avc_decoder_conf_record.h">
+      <Filter>avc</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stsz_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\stsc_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+    <ClInclude Include="iso\box\unknown_box.h">
+      <Filter>iso\box</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="flv\flv_parser.cpp">
+      <Filter>flv</Filter>
+    </ClCompile>
+    <ClCompile Include="flv\flv_to_string.cpp">
+      <Filter>flv</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\iso_media_parser.cpp">
+      <Filter>iso</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\ftyp_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\iso_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\mdat_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\mdia_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\moov_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\mvhd_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\pdin_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\skip_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\tkhd_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\trak_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\tref_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\trgr_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\mdhd_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\minf_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\hdlr_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\nmhd_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\elng_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stbl_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stdp_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stts_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\ctts_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stsd_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\cslg_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stss_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stsh_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\sdtp_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\edts_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\elst_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\dinf_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\dref_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="avc\avc_decoder_conf_record.cpp">
+      <Filter>avc</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stsz_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\stsc_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+    <ClCompile Include="iso\box\unknown_box.cpp">
+      <Filter>iso\box</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RestraintLayout
+    id="@+id/rl_media_flv_root"
+    width="fill"
+    height="fill">
+
+    <TextView
+        id="@+id/tv_media_flv_path"
+        width="fill"
+        height="auto"
+        padding="4dp"
+        margin="12, 0, 12, 0"
+        text=""
+        is_editable="true"
+        is_selectable="true"
+        handle_start="@id/rl_media_flv_root"
+        handle_end="@id/bt_media_flv_browser_button, start"
+        handle_top="@id/bt_media_flv_browser_button"
+        handle_bottom="@id/bt_media_flv_browser_button" />
+
+    <Button
+        id="@+id/bt_media_flv_browser_button"
+        width="auto"
+        height="auto"
+        margin="12dp"
+        text="浏览"
+        handle_end="@id/bt_media_flv_parse_button, start"
+        handle_top="@id/rl_media_flv_root" />
+
+    <Button
+        id="@+id/bt_media_flv_parse_button"
+        width="auto"
+        height="auto"
+        margin="12dp"
+        text="解析"
+        handle_end="@id/rl_media_flv_root"
+        handle_top="@id/rl_media_flv_root" />
+
+    <ListView
+        id="@+id/lv_media_flv_info_list"
+        width="fill"
+        height="fill"
+        margin="8, 8, 8, 8"
+        handle_start="@id/rl_media_flv_root"
+        handle_top="@id/bt_media_flv_browser_button, bottom"
+        handle_end="@id/rl_media_flv_root"
+        handle_bottom="@id/rl_media_flv_root" />
+
+</RestraintLayout>

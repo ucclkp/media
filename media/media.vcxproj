@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CF064455-0C1C-4D95-BE57-269D67D3B458}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>media</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\lib\</OutDir>
+    <IntDir>$(SolutionDir)build\$(PlatformTarget)\$(Configuration)\obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..;$(SolutionDir)utils\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="avc\avc_decoder_conf_record.h" />
+    <ClInclude Include="flv\flv.h" />
+    <ClInclude Include="flv\flv_parser.h" />
+    <ClInclude Include="flv\flv_to_string.h" />
+    <ClInclude Include="iso\box\cslg_box.h" />
+    <ClInclude Include="iso\box\ctts_box.h" />
+    <ClInclude Include="iso\box\dinf_box.h" />
+    <ClInclude Include="iso\box\dref_box.h" />
+    <ClInclude Include="iso\box\edts_box.h" />
+    <ClInclude Include="iso\box\elng_box.h" />
+    <ClInclude Include="iso\box\elst_box.h" />
+    <ClInclude Include="iso\box\ftyp_box.h" />
+    <ClInclude Include="iso\box\hdlr_box.h" />
+    <ClInclude Include="iso\box\iso_box.h" />
+    <ClInclude Include="iso\box\mdat_box.h" />
+    <ClInclude Include="iso\box\mdhd_box.h" />
+    <ClInclude Include="iso\box\mdia_box.h" />
+    <ClInclude Include="iso\box\minf_box.h" />
+    <ClInclude Include="iso\box\moov_box.h" />
+    <ClInclude Include="iso\box\mvhd_box.h" />
+    <ClInclude Include="iso\box\nmhd_box.h" />
+    <ClInclude Include="iso\box\pdin_box.h" />
+    <ClInclude Include="iso\box\sdtp_box.h" />
+    <ClInclude Include="iso\box\skip_box.h" />
+    <ClInclude Include="iso\box\stbl_box.h" />
+    <ClInclude Include="iso\box\stdp_box.h" />
+    <ClInclude Include="iso\box\stsc_box.h" />
+    <ClInclude Include="iso\box\stsd_box.h" />
+    <ClInclude Include="iso\box\stsh_box.h" />
+    <ClInclude Include="iso\box\stss_box.h" />
+    <ClInclude Include="iso\box\stsz_box.h" />
+    <ClInclude Include="iso\box\stts_box.h" />
+    <ClInclude Include="iso\box\tkhd_box.h" />
+    <ClInclude Include="iso\box\trak_box.h" />
+    <ClInclude Include="iso\box\tref_box.h" />
+    <ClInclude Include="iso\box\trgr_box.h" />
+    <ClInclude Include="iso\box\unknown_box.h" />
+    <ClInclude Include="iso\iso_constants.h" />
+    <ClInclude Include="iso\iso_media_parser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="avc\avc_decoder_conf_record.cpp" />
+    <ClCompile Include="flv\flv_parser.cpp" />
+    <ClCompile Include="flv\flv_to_string.cpp" />
+    <ClCompile Include="iso\box\cslg_box.cpp" />
+    <ClCompile Include="iso\box\ctts_box.cpp" />
+    <ClCompile Include="iso\box\dinf_box.cpp" />
+    <ClCompile Include="iso\box\dref_box.cpp" />
+    <ClCompile Include="iso\box\edts_box.cpp" />
+    <ClCompile Include="iso\box\elng_box.cpp" />
+    <ClCompile Include="iso\box\elst_box.cpp" />
+    <ClCompile Include="iso\box\ftyp_box.cpp" />
+    <ClCompile Include="iso\box\hdlr_box.cpp" />
+    <ClCompile Include="iso\box\iso_box.cpp" />
+    <ClCompile Include="iso\box\mdat_box.cpp" />
+    <ClCompile Include="iso\box\mdhd_box.cpp" />
+    <ClCompile Include="iso\box\mdia_box.cpp" />
+    <ClCompile Include="iso\box\minf_box.cpp" />
+    <ClCompile Include="iso\box\moov_box.cpp" />
+    <ClCompile Include="iso\box\mvhd_box.cpp" />
+    <ClCompile Include="iso\box\nmhd_box.cpp" />
+    <ClCompile Include="iso\box\pdin_box.cpp" />
+    <ClCompile Include="iso\box\sdtp_box.cpp" />
+    <ClCompile Include="iso\box\skip_box.cpp" />
+    <ClCompile Include="iso\box\stbl_box.cpp" />
+    <ClCompile Include="iso\box\stdp_box.cpp" />
+    <ClCompile Include="iso\box\stsc_box.cpp" />
+    <ClCompile Include="iso\box\stsd_box.cpp" />
+    <ClCompile Include="iso\box\stsh_box.cpp" />
+    <ClCompile Include="iso\box\stss_box.cpp" />
+    <ClCompile Include="iso\box\stsz_box.cpp" />
+    <ClCompile Include="iso\box\stts_box.cpp" />
+    <ClCompile Include="iso\box\tkhd_box.cpp" />
+    <ClCompile Include="iso\box\trak_box.cpp" />
+    <ClCompile Include="iso\box\tref_box.cpp" />
+    <ClCompile Include="iso\box\trgr_box.cpp" />
+    <ClCompile Include="iso\box\unknown_box.cpp" />
+    <ClCompile Include="iso\iso_media_parser.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
