@@ -28,13 +28,7 @@ namespace media {
     class FLVListItem : public ukive::ListItem
     {
     public:
-        explicit FLVListItem(ukive::View* v)
-            : ListItem(v)
-        {
-            title_label = reinterpret_cast<ukive::TextView*>(v->findView(ID_TITLE));
-            summary_label = reinterpret_cast<ukive::TextView*>(v->findView(ID_SUMMARY));
-            avatar_image = reinterpret_cast<ukive::ImageView*>(v->findView(ID_AVATAR));
-        }
+        explicit FLVListItem(ukive::View* v);
 
         ukive::TextView* title_label;
         ukive::TextView* summary_label;
@@ -50,9 +44,13 @@ namespace media {
             std::u16string summary;
         };
 
-        ukive::ListItem* onListCreateItem(ukive::LayoutView* parent, int position) override;
-        void onListSetItemData(ukive::ListItem* item, int position) override;
-        int onListGetDataCount() override;
+        ukive::ListItem* onCreateListItem(
+            ukive::LayoutView* parent, ukive::ListItemEventRouter* router,
+            size_t position) override;
+        void onSetListItemData(
+            ukive::LayoutView* parent, ukive::ListItemEventRouter* router,
+            ukive::ListItem* item) override;
+        size_t onGetListDataCount(ukive::LayoutView* parent) const override;
 
         void addItem(const ukive::Color& c, const std::u16string& title, const std::u16string& summary);
         void addItem(int pos, const ukive::Color& c, const std::u16string& title, const std::u16string& summary);

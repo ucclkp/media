@@ -21,7 +21,7 @@
 #include "ukive/views/list/grid_list_layouter.h"
 #include "ukive/views/list/flow_list_layouter.h"
 #include "ukive/views/list/linear_list_layouter.h"
-#include "ukive/views/combo_box/combo_box.h"
+#include "ukive/views/combo_box.h"
 #include "ukive/elements/texteditor_element.h"
 #include "ukive/system/dialog/open_file_dialog.h"
 #include "ukive/resources/layout_instantiator.h"
