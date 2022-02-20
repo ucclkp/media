@@ -8,22 +8,21 @@
 
 #include <fstream>
 
-#include "utils/convert.h"
+#include "utils/strings/int_conv.hpp"
 #include "utils/endian.hpp"
 
 #include "ukive/views/button.h"
 #include "ukive/views/text_view.h"
 #include "ukive/views/image_view.h"
-#include "ukive/graphics/color.h"
 #include "ukive/views/list/list_view.h"
 #include "ukive/elements/color_element.h"
-#include "ukive/graphics/color.h"
+#include "ukive/graphics/colors/color.h"
 #include "ukive/views/list/grid_list_layouter.h"
 #include "ukive/views/list/flow_list_layouter.h"
 #include "ukive/views/list/linear_list_layouter.h"
 #include "ukive/views/combo_box.h"
 #include "ukive/elements/texteditor_element.h"
-#include "ukive/system/dialog/open_file_dialog.h"
+#include "ukive/system/dialogs/open_file_dialog.h"
 #include "ukive/resources/layout_instantiator.h"
 
 #include "media-test/ui/media_flv_source.h"
@@ -43,19 +42,19 @@ namespace media {
             parent->getContext(), parent, Res::Layout::media_flv_page_layout_xml);
 
         // Buttons
-        browser_button_ = findViewById<ukive::Button>(v, Res::Id::bt_media_flv_browser_button);
+        browser_button_ = findView<ukive::Button>(v, Res::Id::bt_media_flv_browser_button);
         browser_button_->setOnClickListener(this);
 
-        parse_button_ = findViewById<ukive::Button>(v, Res::Id::bt_media_flv_parse_button);
+        parse_button_ = findView<ukive::Button>(v, Res::Id::bt_media_flv_parse_button);
         parse_button_->setOnClickListener(this);
 
-        path_tv_ = findViewById<ukive::TextView>(v, Res::Id::tv_media_flv_path);
+        path_tv_ = findView<ukive::TextView>(v, Res::Id::tv_media_flv_path);
         path_tv_->setBackground(new ukive::TextEditorElement(parent->getContext()));
 
         // ListView
         source_ = new MediaFLVSource();
 
-        auto list_view = findViewById<ukive::ListView>(v, Res::Id::lv_media_flv_info_list);
+        auto list_view = findView<ukive::ListView>(v, Res::Id::lv_media_flv_info_list);
         list_view->setLayouter(new ukive::LinearListLayouter());
         list_view->setSource(source_);
 
@@ -94,12 +93,12 @@ namespace media {
             uint32_t count = 0;
             for (const auto& tag : tags) {
                 std::u16string title;
-                title.append(utl::to_u16string(count)).append(u" ");
+                title.append(utl::itos16(count)).append(u" ");
                 title.append(media::flv::tagTypeToString(tag.tag_type));
 
                 std::u16string summary;
                 summary.append(tag.filter == 1 ? u"Encrypted " : u"");
-                summary.append(u"ts:").append(utl::to_u16string(tag.timestamp)).append(u"ms");
+                summary.append(u"ts:").append(utl::itos16(tag.timestamp)).append(u"ms");
 
                 if (tag.tag_type == media::flv::TAG_VIDEO) {
                     summary.append(u" | ");
@@ -110,7 +109,7 @@ namespace media {
                         summary.append(media::flv::videoAVCPacketTypeToString(tag.video_tag_header.avc_packet_type));
                         if (tag.video_tag_header.avc_packet_type == media::flv::AVCPT_NALUs) {
                             summary.append(u" | ");
-                            summary.append(utl::to_u16string(tag.video_tag_header.composition_time)).append(u"ms");
+                            summary.append(utl::itos16(tag.video_tag_header.composition_time)).append(u"ms");
                         }
                     }
                     source_->addItem(ukive::Color::Orange300, title, summary);

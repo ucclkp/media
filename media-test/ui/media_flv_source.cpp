@@ -7,14 +7,12 @@
 #include "media-test/ui/media_flv_source.h"
 
 #include "utils/log.h"
-#include "utils/convert.h"
 
 #include "ukive/views/layout/restraint_layout.h"
 #include "ukive/views/layout_info/restraint_layout_info.h"
 #include "ukive/views/image_view.h"
 #include "ukive/views/text_view.h"
 #include "ukive/elements/color_element.h"
-#include "ukive/graphics/color.h"
 #include "ukive/window/window.h"
 
 
@@ -93,18 +91,23 @@ namespace media {
     }
 
     void MediaFLVSource::addItem(
-        const ukive::Color& c, const std::u16string& title, const std::u16string& summary)
+        const ukive::Color& c,
+        const std::u16string_view& title,
+        const std::u16string_view& summary)
     {
         BindData data ;
         data.color = c;
         data.title = title;
         data.summary = summary;
 
-        data_list_.push_back(data);
+        data_list_.push_back(std::move(data));
     }
 
     void MediaFLVSource::addItem(
-        int pos, const ukive::Color& c, const std::u16string& title, const std::u16string& summary)
+        size_t pos,
+        const ukive::Color& c,
+        const std::u16string_view& title,
+        const std::u16string_view& summary)
     {
         BindData data;
         data.color = c;
@@ -112,21 +115,18 @@ namespace media {
         data.summary = summary;
 
         if (data_list_.size() == 0)
-            data_list_.push_back(data);
+            data_list_.push_back(std::move(data));
         else {
-            int index = 0;
-            for (auto it = data_list_.begin();
-                it != data_list_.end(); ++it, ++index) {
-                if (pos == index) {
-                    data_list_.insert(it, data);
-                    break;
-                }
+            if (pos <= data_list_.size()) {
+                data_list_.insert(data_list_.begin() + pos, std::move(data));
             }
         }
     }
 
     void MediaFLVSource::modifyItem(
-        const ukive::Color& c, const std::u16string& title, const std::u16string& summary)
+        const ukive::Color& c,
+        const std::u16string_view& title,
+        const std::u16string_view& summary)
     {
         for (auto it = data_list_.begin();
             it != data_list_.end(); ++it) {
@@ -137,7 +137,7 @@ namespace media {
         }
     }
 
-    void MediaFLVSource::removeItem(const std::u16string& title) {
+    void MediaFLVSource::removeItem(const std::u16string_view& title) {
         for (auto it = data_list_.begin();
             it != data_list_.end();) {
             if ((*it).title == title) {
@@ -148,15 +148,11 @@ namespace media {
         }
     }
 
-    void MediaFLVSource::removeItem(int pos) {
-        int index = 0;
-        for (auto it = data_list_.begin();
-            it != data_list_.end(); ++index, ++it) {
-            if (index == pos) {
-                data_list_.erase(it);
-                break;
-            }
+    void MediaFLVSource::removeItem(size_t pos) {
+        if (pos >= data_list_.size()) {
+            return;
         }
+        data_list_.erase(data_list_.begin() + pos);
     }
 
     void MediaFLVSource::clear() {

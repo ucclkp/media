@@ -6,19 +6,18 @@
 
 #include "media-test/ui/media_iso_page.h"
 
-#include "utils/convert.h"
+#include "utils/strings/string_utils.hpp"
 
 #include "ukive/views/button.h"
 #include "ukive/views/text_view.h"
 #include "ukive/views/image_view.h"
 #include "ukive/elements/color_element.h"
-#include "ukive/graphics/color.h"
 #include "ukive/views/tree/tree_node.h"
 #include "ukive/views/tree/tree_node_button.h"
 #include "ukive/views/list/linear_list_layouter.h"
 #include "ukive/views/combo_box.h"
 #include "ukive/elements/texteditor_element.h"
-#include "ukive/system/dialog/open_file_dialog.h"
+#include "ukive/system/dialogs/open_file_dialog.h"
 #include "ukive/resources/layout_instantiator.h"
 #include "ukive/views/layout/restraint_layout.h"
 #include "ukive/views/layout_info/restraint_layout_info.h"
@@ -43,17 +42,17 @@ namespace media {
             parent->getContext(), parent, Res::Layout::media_iso_page_layout_xml);
 
         // Buttons
-        browser_button_ = findViewById<ukive::Button>(v, Res::Id::bt_media_iso_browser_button);
+        browser_button_ = findView<ukive::Button>(v, Res::Id::bt_media_iso_browser_button);
         browser_button_->setOnClickListener(this);
 
-        parse_button_ = findViewById<ukive::Button>(v, Res::Id::bt_media_iso_parse_button);
+        parse_button_ = findView<ukive::Button>(v, Res::Id::bt_media_iso_parse_button);
         parse_button_->setOnClickListener(this);
 
-        path_tv_ = findViewById<ukive::TextView>(v, Res::Id::tv_media_iso_file_path);
+        path_tv_ = findView<ukive::TextView>(v, Res::Id::tv_media_iso_file_path);
         path_tv_->setBackground(new ukive::TextEditorElement(parent->getContext()));
 
         // ListView
-        list_view_ = findViewById<ukive::ListView>(v, Res::Id::lv_media_iso_info_list);
+        list_view_ = findView<ukive::ListView>(v, Res::Id::lv_media_iso_info_list);
         list_view_->setLayouter(new ukive::LinearListLayouter());
         list_view_->setSource(this);
         list_view_->setSecDimUnknown(true);
@@ -129,7 +128,7 @@ namespace media {
         tree_item->expand_button_->setOnClickListener(router);
         tree_item->text_label->setOnClickListener(router);
 
-        tree_item->ex_margins.start = node->getLevel() * 16;
+        tree_item->ex_margins.start = int(node->getLevel() * 16);
         tree_item->text_label->setText(node->text);
 
         if (node->getChildCount() == 0) {

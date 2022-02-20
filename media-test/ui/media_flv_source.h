@@ -11,7 +11,7 @@
 
 #include "ukive/views/list/list_item.h"
 #include "ukive/views/list/list_source.h"
-#include "ukive/graphics/color.h"
+#include "ukive/graphics/colors/color.h"
 
 
 namespace ukive {
@@ -52,11 +52,21 @@ namespace media {
             ukive::ListItem* item) override;
         size_t onGetListDataCount(ukive::LayoutView* parent) const override;
 
-        void addItem(const ukive::Color& c, const std::u16string& title, const std::u16string& summary);
-        void addItem(int pos, const ukive::Color& c, const std::u16string& title, const std::u16string& summary);
-        void modifyItem(const ukive::Color& c, const std::u16string& title, const std::u16string& summary);
-        void removeItem(const std::u16string& title);
-        void removeItem(int pos);
+        void addItem(
+            const ukive::Color& c,
+            const std::u16string_view& title,
+            const std::u16string_view& summary);
+        void addItem(
+            size_t pos,
+            const ukive::Color& c,
+            const std::u16string_view& title,
+            const std::u16string_view& summary);
+        void modifyItem(
+            const ukive::Color& c,
+            const std::u16string_view& title,
+            const std::u16string_view& summary);
+        void removeItem(const std::u16string_view& title);
+        void removeItem(size_t pos);
         void clear();
 
     private:

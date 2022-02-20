@@ -7,7 +7,6 @@
 #include "media-test/ui/media_window.h"
 
 #include "ukive/elements/color_element.h"
-#include "ukive/graphics/color.h"
 #include "ukive/views/tab/tab_view.h"
 #include "ukive/views/tab/tab_strip_view.h"
 
